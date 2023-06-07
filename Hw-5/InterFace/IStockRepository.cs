@@ -8,5 +8,6 @@ namespace Hw_5.InterFace
 {
     public interface IStockRepository
     {
+        string SaleProduct(int  productId , int count);
     }
 }
