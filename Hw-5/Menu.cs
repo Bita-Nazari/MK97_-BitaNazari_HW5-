@@ -57,7 +57,9 @@ namespace Hw_5
         {
             Console.WriteLine("enter id");
             int id = Convert.ToInt32(Console.ReadLine());
-            Productrepo.GetProductById(id);
+            string name =Productrepo.GetProductById(id);
+
+            Console.WriteLine(name);
         }
     }
 }

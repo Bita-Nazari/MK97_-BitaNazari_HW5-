@@ -41,7 +41,7 @@ namespace Hw_5.InterFace
 
             if (validProduct != null)
             {
-                return ($" {validProduct.Name}");
+                return ($" name : {validProduct.Name}");
             }
             else { throw new ProductNotFoundException("product not found"); }
         }
