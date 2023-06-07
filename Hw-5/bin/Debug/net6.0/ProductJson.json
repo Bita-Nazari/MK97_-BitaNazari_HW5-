@@ -1,7 +1,12 @@
 [
   {
-    "Name" : "Miii_123",
-      "ProductId" : 1,
-      "Barcode" : 123
+    "ProductId": 1,
+    "Name": "Miio_123",
+    "Barcode": 123
+  },
+  {
+    "ProductId": 2,
+    "Name": "Mioo_123",
+    "Barcode": 123
   }
 ]

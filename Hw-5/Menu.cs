@@ -28,7 +28,7 @@ namespace Hw_5
             }
             else if(key == 2) 
             {
-            
+            SearchById();
             }
             else if(key == 3) 
             {
@@ -42,15 +42,22 @@ namespace Hw_5
             for(int i = 0; i < num; i++)
             {
                 Console.WriteLine("enter the name of product");
-                string name = Console.ReadLine();
+                product.Name = Console.ReadLine();
                 Console.WriteLine("enter the id of products");
-                int id = Convert.ToInt32(Console.ReadLine());
+                product.ProductId = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("enter the barcod of product");
-                int barcod = Convert.ToInt32(Console.ReadLine());
+                product.Barcode = Convert.ToInt32(Console.ReadLine());
                 Productrepo.AddProduct(product);
             }
-           
+           Console.Clear();
+            MainMenu();
 
+        }
+        public void SearchById()
+        {
+            Console.WriteLine("enter id");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Productrepo.GetProductById(id);
         }
     }
 }

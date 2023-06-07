@@ -8,14 +8,17 @@ namespace Hw_5.InterFace
     public class ProductRepository : IProductRepository
     {
         public string stream;
-        
-        public List<Product> products;
+
+          List<Product> products = new List<Product>()
+        {
+            new Product(1,"Miio_123", 123),
+        };
         string path = @"ProductJson.json";
         public string AddProduct(Product product)
         {
             products = GetProductList();
-            var searchproduct = products.FirstOrDefault(search => product.ProductId == search.ProductId);
-            CheckProductName(searchproduct.Name);
+            var searchproduct = products.Find(p =>  p.ProductId == product.ProductId);
+           
             if (searchproduct == null)
             {
                 products.Add(product);
@@ -38,7 +41,7 @@ namespace Hw_5.InterFace
 
             if (validProduct != null)
             {
-                return validProduct.Name;
+                return ($" {validProduct.Name}");
             }
             else { throw new ProductNotFoundException("product not found"); }
         }
@@ -49,7 +52,7 @@ namespace Hw_5.InterFace
             {
                 string jsonstr = reader.ReadToEnd();
                 List<Product> products = JsonConvert.DeserializeObject<List<Product>>(jsonstr);
-                if (products != null && products.Count > 0)
+                if (products != null )
                     foreach (var product in products)
                     {
 

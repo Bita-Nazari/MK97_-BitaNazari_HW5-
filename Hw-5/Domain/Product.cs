@@ -11,6 +11,16 @@ namespace Hw_5.Domain
         public int ProductId { get; set; }
         public string Name { get; set; }
         public int Barcode { get; set; }
+        public Product(int id ,string name, int barcode)
+        {
+            ProductId = id;
+            Name = name;
+            Barcode = barcode;
+        }
+        public Product()
+        {
+            
+        }
         public override string ToString()
         {
             return ($"name = {Name} id = {ProductId} , barcode = {Barcode}");
